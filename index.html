@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" >
+    <link rel="stylesheet" href="static css/static.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Memory Game</h1>
+        </header>
+        <section class= "players">
+            
+            <div class="player" contenteditable="true" id="dynamicPlayer">
+                <div id="player" contenteditable="true"></div>
+            </div>
+        </section>
+        <section class="score-panel">
+            <select id="gameType">
+                    <option>Choose the game Type</option>
+                    <option value="3">3 X 4</option>
+                    <option value="4">4 X 4</option>
+                    <option value="5">5 X 4</option>
+            </select>
+            <select  id="totalPlayer">
+                    <option>Select Player's</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+            </select>
+        	<ul class="stars">
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        		<li><i class="fa fa-star"></i></li>
+        	</ul>    
+        	<span class="moves">0</span> Moves
+
+            <div class="timer">
+            </div>
+
+            <div class="restart" onclick=resetAgain()>
+        		<i class="fa fa-repeat"></i>
+            </div>
+            <button class="btn-set-style" id="startBtn">Start Game</button>
+        </section>
+
+        <ul class="deck" id="cardDeck">
+            <li class="card" type="amazon">
+                <i class="fa fa-amazon"></i>
+            </li>
+            <li class="card" type="amazon">
+                <i class="fa fa-amazon"></i>
+            </li>
+            <li class="card" type="android">
+                <i class="fa fa-android"></i>
+            </li>
+             <li class="card" type="android">
+                <i class="fa fa-android"></i>
+            </li>
+            <li class="card match" type="linux">
+                <i class="fa fa-linux"></i>
+            </li>
+            <li class="card match" type="linux">
+                <i class="fa fa-linux"></i>
+            </li>
+            <li class="card" type="github">
+                <i class="fa fa-github"></i>
+            </li>
+            <li class="card" type="github">
+                <i class="fa fa-github"></i>
+            </li>
+            <li class="card" type="reddit">
+                <i class="fa fa-reddit"></i>
+            </li>
+            <li class="card" type="reddit">
+                <i class="fa fa-reddit"></i>
+            </li>
+
+            <li class="card" type="steam">
+                <i class="fa fa-steam-square"></i>
+            </li>
+            <li class="card" type="steam">
+                <i class="fa fa-steam-square"></i>
+            </li>
+            <li class="card" type="tripadvisor">
+                <i class="fa fa-tripadvisor"></i>
+            </li>
+            <li class="card" type="tripadvisor">
+                <i class="fa fa-tripadvisor"></i>
+            </li>
+            <li class="card" type="instagram">
+                <i class="fa fa-instagram"></i>
+            </li>
+            <li class="card" type="instagram">
+                <i class="fa fa-instagram"></i>
+            </li>
+            <li class="card" type="search">
+                <i class="fa fa-search"></i>
+            </li>
+            <li class="card" type="search">
+                <i class="fa fa-search"></i>
+            </li>
+            <li class="card" type="user">
+                <i class="fa fa-user"></i>
+            </li>
+            <li class="card" type="user">
+                <i class="fa fa-user"></i>
+            </li>            
+            
+        </ul>
+
+        <div id="popupOne" class="overlay">
+            <div class="popup">
+                <h2>Congratulations 🎉</h2>
+                <a class="close" href=# >×</a>
+                <div class="content-1" id="winnerUser">
+                    Congratulations You have WON!!
+                </div>
+                <div class="content-2">
+                    <p>You made <span id=finalMove> </span> moves </p>
+                    <p>in <span id=totalTime> </span> </p>
+                    <p>Rating:  <span id=starRating></span></p>
+                </div>
+                <button id="play-again"onclick="playAgain()">
+                    Play again</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <script src="static js/static.js"></script>
+</body>
+</html>
